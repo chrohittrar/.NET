@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Assignment3": {
+      "commandName": "Project",
+      "commandLineArgs": " \"Rohit\", \"Shreya\", \"Rohsrey\"\r\n"
+    }
+  }
+}

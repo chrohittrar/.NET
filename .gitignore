@@ -1,0 +1,71 @@
+## Ignore Visual Studio temporary files, directories, and files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]Release/
+[Dd]ebug/
+[Dd]Release/
+x64/
+x86/
+xarm/
+[Aa]rm/
+[Aa]rm64/
+
+# Uncomment if you have tasks that create project's dependencies in these directories
+# /packages/
+# /node_modules/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer logs
+*.log
+
+# Windows Installer merge modules
+*.msm
+
+# Windows Installer patches
+*.msp
+
+# Ignore .NET Core build directories
+bin/
+obj/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Tye
+.tye/
+
+# User-specific files
+.vs2019/
+.vs2017/
+
+# User-specific folders for Visual Studio for Mac
+.vscode/
+
+# Backup & report files
+_UpgradeReport_Files/
+UpgradeLog.xml
+
+# Windows Installer
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
