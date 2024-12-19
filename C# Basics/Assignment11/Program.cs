@@ -11,16 +11,19 @@
             }
         }
 
-        public static void SumOfAll(int[] arr) { 
+        public static void SumOfAll(int[] arr)
+        {
             int sum = 0;
-            for (int i = 0; i < arr.Length; i++) { 
+            for (int i = 0; i < arr.Length; i++)
+            {
                 sum += arr[i];
             }
 
             Console.WriteLine($"Sum of the Array is : {sum}");
         }
 
-        public static void FindMaxAndMin(int[] arr) {
+        public static void FindMaxAndMin(int[] arr)
+        {
             int max = int.MinValue;
             int min = int.MaxValue;
 
@@ -42,14 +45,15 @@
         {
             int sum = 0;
             bool result = false;
-            for (int i = 1; i <= (number/2) ; i++)
+            for (int i = 1; i <= (number / 2); i++)
             {
                 if (number % i == 0)
                 {
                     sum += i;
                 }
             }
-            if ((sum) == number) { 
+            if ((sum) == number)
+            {
                 result = true;
             }
 
@@ -57,12 +61,14 @@
         }
 
 
-        public static void CheckPerfect(int[] arr) {
+        public static void CheckPerfect(int[] arr)
+        {
 
             HashSet<int> perfectNumbers = new HashSet<int>();
             HashSet<int> notPerfect = new HashSet<int>();
 
-            foreach (var item in arr) {
+            foreach (var item in arr)
+            {
 
                 if (isPerfect(item))
                 {
@@ -76,8 +82,9 @@
             }
 
             Console.WriteLine("All perfect numbers are : \n");
-            foreach (var per in perfectNumbers) {
-                Console.Write(per+" ");
+            foreach (var per in perfectNumbers)
+            {
+                Console.Write(per + " ");
             }
 
             Console.WriteLine("\n");
@@ -85,7 +92,7 @@
             Console.WriteLine("All not perfect numbers are : \n");
             foreach (var notper in notPerfect)
             {
-                Console.Write(notper+" ");
+                Console.Write(notper + " ");
             }
 
             Console.WriteLine("\n");
@@ -95,7 +102,7 @@
         {
 
             HashSet<int> Primes = new HashSet<int>();
-            HashSet<int> nonPrime = new HashSet<int>(); 
+            HashSet<int> nonPrime = new HashSet<int>();
 
             foreach (var item in numbers)
             {
@@ -110,34 +117,71 @@
             }
 
             Console.WriteLine("Prime numbers : \n");
-            foreach (var pitem in nonPrime)
+            foreach (var pitem in Primes)
             {
                 Console.WriteLine(pitem);
             }
 
             Console.WriteLine("\n");
 
-            Console.WriteLine("");
+            Console.WriteLine("Non Primes are : ");
+            foreach (var npitem in nonPrime)
+            {
+                Console.WriteLine(npitem);
+            }
+
+            Console.WriteLine("\n");
+
         }
 
         private static bool isPrime(int number)
         {
-            bool result = true;
-           for(int i = 2; i <= number/2; i++)
+            if (number <= 1)
+                return false;
+
+            for (int i = 2; i <= Math.Sqrt(number); i++)
             {
-                if(number%i == 0)
+                if (number % i == 0)
                 {
-                    result = false;
-                    break;
+                    return false;
                 }
             }
 
-            return result;
+            return true;
         }
+
+        private static void FindFrequency(int[] numbers)
+        {
+            Dictionary<int, int> frequency = new Dictionary<int, int>();
+
+            foreach (var num in numbers)
+            {
+                if (frequency.ContainsKey(num))
+                {
+                    frequency[num]++;
+                }
+                else
+                {
+                    frequency[num] = 1;
+                }
+            }
+
+            Console.WriteLine("Frequency of the elements in the array is :\n");
+            foreach (KeyValuePair<int, int> freq in frequency)
+            {
+                Console.WriteLine($"{freq.Key} : {freq.Value}");
+            }
+        }
+
+        private static void FindSecondSmallest(int[] numbers)
+        {
+
+        }
+
 
         static void Main(string[] args)
         {
-            int[] numbers = { 6, 12, 34, 28, 59, 65, 57, 58, 98, 102};
+            int[] numbers = { 6, 2, 34, 3, 59, 65, 59, 58, 5, 102 };
 
             int choice = 0;
             do
@@ -148,6 +192,12 @@
                     "3. Minimum and Maximum in all the numbers\n" +
                     "4. Find if the number is Perfect number or not\n" +
                     "5. Check Array elements are Prime or not \n" +
+                    "6. Find Frequency\n" +
+                    "7. Find the second smallest element\n" +
+                    "8. Find the second Largest Element\n" +
+                    "9. Sort the array is Ascending Order\n" +
+                    "10.Sort the array in descending Order\n" +
+                    "11.Reverse the array\n" +
                     "0. Exit\n");
                 Console.WriteLine("Enter your Input : \n");
                 try
@@ -175,15 +225,44 @@
 
                             CheckPerfect(numbers);
                             break;
-                               
+
                         case 5:
 
                             CheckPrimeNumber(numbers);
                             break;
-                              
+
+                        case 6:
+
+                            FindFrequency(numbers);
+                            break;
+
+                        case 7:
+
+                            FindSecondSmallest(numbers);
+                            break;
+
+                        case 8:
+
+
+                            break;
+
+                        case 9:
+
+
+                            break;
+
+                        case 10:
+
+
+                            break;
+
+                        case 11:
+
+
+                            break;
                     }
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
@@ -193,3 +272,23 @@
         
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
